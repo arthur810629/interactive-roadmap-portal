@@ -1,3 +1,4 @@
+/* Основной контейнер */
 .profession-page {
   padding: 60px 20px;
   max-width: 1280px;
@@ -6,7 +7,7 @@
   color: #222;
 }
 
-/* Заголовок профессии */
+/* Заголовок */
 .profession-page h2 {
   font-size: 32px;
   font-weight: 700;
@@ -22,16 +23,18 @@
   max-width: 700px;
 }
 
-/* Контейнер React Flow */
+/* Контейнер для React Flow */
 .roadmap-graph {
-  height: 500px; /* Важно для корректного отображения */
+  width: 100%;
+  height: 500px;
   border: 1px solid #ddd;
   border-radius: 12px;
   overflow: hidden;
   background: #fafafa;
+  transition: height 0.3s ease;
 }
 
-/* Плейсхолдер, если roadmap пуст */
+/* Плейсхолдер, если нет roadmap */
 .roadmap-placeholder {
   padding: 40px;
   background: #f3f3f3;
@@ -40,4 +43,31 @@
   font-style: italic;
   color: #666;
   font-size: 16px;
+}
+
+/* Адаптация под мобильные экраны */
+@media (max-width: 768px) {
+  .profession-page h2 {
+    font-size: 24px;
+  }
+
+  .profession-description {
+    font-size: 14px;
+    margin-bottom: 32px;
+  }
+
+  .roadmap-graph {
+    height: 360px;
+  }
+}
+
+@media (max-width: 480px) {
+  .roadmap-graph {
+    height: 320px;
+  }
+
+  .roadmap-placeholder {
+    font-size: 14px;
+    padding: 24px;
+  }
 }

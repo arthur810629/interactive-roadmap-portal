@@ -1,0 +1,49 @@
+/* Контейнер секции навыков */
+.skill-section {
+  padding: 60px 0;
+  text-align: center;
+  background-color: #fafafa;
+}
+
+/* Заголовок секции */
+.skill-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 36px;
+}
+
+/* Сетка навыков */
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Карточка одного навыка */
+.skill-card {
+  background: #ffffff;
+  padding: 16px 12px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.2s ease;
+  text-align: center;
+  color: #222;
+}
+
+.skill-card:hover {
+  background: #f0f4ff;
+  border-color: #007bff;
+}
+
+/* Поддержка клавиатуры и доступности */
+.skill-card:focus-visible {
+  outline: 2px dashed #007bff;
+  outline-offset: 4px;
+}

@@ -1,0 +1,14 @@
+{
+  "short_name": "SkillsMap",
+  "name": "SkillsMap — Интерактивные карьерные Roadmaps",
+  "lang": "ru",
+  "start_url": "/?utm_source=homescreen",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#ffffff",
+  "theme_color": "#007bff",
+  "icons": [
+  
+  ]
+}

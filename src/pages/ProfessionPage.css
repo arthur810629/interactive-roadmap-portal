@@ -1,0 +1,43 @@
+.profession-page {
+  padding: 60px 20px;
+  max-width: 1280px;
+  margin: 0 auto;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  color: #222;
+}
+
+/* Заголовок профессии */
+.profession-page h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #111;
+}
+
+/* Описание профессии */
+.profession-description {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 40px;
+  max-width: 700px;
+}
+
+/* Контейнер React Flow */
+.roadmap-graph {
+  height: 500px; /* Важно для корректного отображения */
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fafafa;
+}
+
+/* Плейсхолдер, если roadmap пуст */
+.roadmap-placeholder {
+  padding: 40px;
+  background: #f3f3f3;
+  border-radius: 12px;
+  text-align: center;
+  font-style: italic;
+  color: #666;
+  font-size: 16px;
+}

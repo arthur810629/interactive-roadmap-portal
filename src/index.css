@@ -1,0 +1,106 @@
+/* Глобальные переменные */
+:root {
+  --font-main: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
+  --font-code: 'Fira Code', 'Courier New', monospace;
+
+  --bg-body: #ffffff;
+  --text-main: #222222;
+  --text-muted: #555;
+  --link-color: #007bff;
+  --border-color: #ddd;
+  --focus-outline: 2px dashed #007bff;
+  --focus-offset: 4px;
+}
+
+/* Тёмная тема (опционально) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-body: #121212;
+    --text-main: #f0f0f0;
+    --text-muted: #bbb;
+    --link-color: #66b3ff;
+    --border-color: #333;
+  }
+}
+
+/* Базовые сбросы и глобальные стили */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-main);
+  background-color: var(--bg-body);
+  color: var(--text-main);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Упрощённые заголовки */
+h1, h2, h3, h4, h5 {
+  color: var(--text-main);
+  line-height: 1.25;
+  margin-top: 0;
+}
+
+/* Ссылки */
+a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+  color: darken(var(--link-color), 10%);
+}
+
+/* Фокус для клавиатурных пользователей */
+:focus-visible {
+  outline: var(--focus-outline);
+  outline-offset: var(--focus-offset);
+}
+
+/* Код и моно */
+code {
+  font-family: var(--font-code);
+  background-color: #f3f3f3;
+  color: #000;
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-size: 0.95em;
+}
+
+/* Изображения */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Списки */
+ul {
+  padding-left: 20px;
+  margin-top: 0;
+}
+
+/* Форма */
+input, textarea, button {
+  font-family: inherit;
+  font-size: 100%;
+}
+
+/* Глобальные контейнеры */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}

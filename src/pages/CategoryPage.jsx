@@ -1,46 +1,36 @@
-import React from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
-import { professionsByCategory } from '../data/professions'
-import './CategoryPage.css'
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { professionsByCategory } from '../data/professions';
+import ReactFlow, { Background, Controls } from 'reactflow';
+import 'reactflow/dist/style.css';
 
-export default function CategoryPage() {
-  const { id } = useParams()
-  const navigate = useNavigate()
-  const category = professionsByCategory[id]
+const ProfessionPage = () => {
+  const { professionId } = useParams();
 
-  if (!category) {
-    return <div className="category-page"><h2>Категория не найдена</h2></div>
-  }
+  const allProfessions = Object.values(professionsByCategory).flat();
+  const profession = allProfessions.find((p) => p.id === professionId);
 
-  const handleClick = (profId) => navigate(`/profession/${profId}`)
-  const handleKeyDown = (e, profId) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault()
-      handleClick(profId)
-    }
-  }
+  const [nodes] = useState(profession?.nodes || []);
+  const [edges] = useState(profession?.edges || []);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  if (!profession) return <div>Профессия не найдена</div>;
 
   return (
-    <div className="category-page">
-      <h2>{category.title}</h2>
-      <p className="category-description">{category.description}</p>
-
-      <ul className="profession-list" role="list">
-        {category.professions.map((prof) => (
-          <li
-            key={prof.id}
-            className="profession-item"
-            role="button"
-            tabIndex={0}
-            onClick={() => handleClick(prof.id)}
-            onKeyDown={(e) => handleKeyDown(e, prof.id)}
-            aria-label={`Перейти к профессии ${prof.title}`}
-          >
-            <h3>{prof.title}</h3>
-            <p>{prof.description}</p>
-          </li>
-        ))}
-      </ul>
+    <div className="container">
+      <h1>{profession.title}</h1>
+      <p>{profession.description}</p>
+      <div style={{ height: '500px', border: '1px solid #ccc', borderRadius: '8px' }}>
+        <ReactFlow nodes={nodes} edges={edges} fitView>
+          <Background />
+          <Controls />
+        </ReactFlow>
+      </div>
     </div>
-  )
-}
+  );
+};
+
+export default ProfessionPage;
